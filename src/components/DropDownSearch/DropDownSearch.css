@@ -1,0 +1,32 @@
+.DropDownSearch .matches {
+  margin-top: 5px;
+  text-align: left;
+  color: black;
+}
+
+.DropDownSearch .matches div {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  animation: fade 0.3s;
+  cursor: pointer;
+}
+
+.DropDownSearch .matches div:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.DropDownSearch .matches div:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.DropDownSearch .matches div.selected {
+  color: #257AFD
+}
+
+.DropDownSearch .matches div:hover {
+  color: #257AFD
+}

@@ -1,0 +1,94 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(66, 161, 244);
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+/** Ultra Light */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff");
+}
+
+/** Thin */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff");
+}
+
+/** Regular */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+/** Medium */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+}
+
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 600;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
+}
+
+/** Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 700;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "San Francisco";
+  height: 100%;
+  color: white;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  padding: 5px;
+  border: solid 2px #fff;
+  background: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 200;
+  border-radius: 5px;
+  transition: all 0.3s;
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #ccc;
+}
+
+input[type="text"]:focus {
+  /* box-shadow: 0 0 5px 1px #fff; */
+}
+
+@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+}

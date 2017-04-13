@@ -1,0 +1,117 @@
+.Result {
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.GBP:before {
+  content: "£";
+}
+
+.Result > div {
+  box-sizing: border-box;
+  float: left;
+  overflow: hidden;
+  border: 4px solid white;
+}
+
+.Result .outbound, .Result .inbound, .Result .date {
+  height: 80px;
+}
+
+.Result .breakdown {
+  border: 4px solid white;
+  border-top: none;
+  width: 100%;
+  height: 36px;
+  padding: 6px 3px;
+  background: none;
+  color: black;
+  text-align: left;
+  overflow-x: scroll;
+}
+
+.Result .breakdown span {
+  color: white;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px 3px;
+  border-radius: 4px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.Result .breakdown span:hover {
+  color: rgb(66, 161, 244) !important;
+}
+
+.Result .outbound {
+  width: 38%;
+  border-left: none;
+  padding-top: 25px;
+  line-height: 12px;
+}
+
+.Result .inbound {
+  width: 38%;
+  border-left: none;
+  padding-top: 25px;
+  line-height: 12px;
+}
+
+.Result .date {
+  background-color: white;
+  color: black;
+  width: 24%;
+  text-align: center;
+  padding: 5px;
+}
+
+.Result .date > * {
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+}
+
+.Result .date .weekday {
+  font-size: 12px;
+}
+
+.Result .date .dayofmonth {
+  line-height: 32px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.Result .date .month {
+  font-size: 12px;
+}
+
+.BookingDetails {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -150px;
+  width: 300px;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.BookingDetails table {
+  width: 100%;
+}
+
+.BookingDetails a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(66, 161, 244);
+}
+
+.BookingDetails a:hover {
+  opacity: 0.5;
+}
