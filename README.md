@@ -1,4 +1,4 @@
-##TrainFinder Frontend
+##TrainFinder Frontend##
 A super simple frontend to the [TrainFinder Backend API](https://github.com/stunningpixels/trainfinder-backend).
 
 Three pages, search, results and a page that shows after a user has been forwarded to booking site.
