@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { Router, Route, Link } from 'react-router-dom'
+import ReactGA from 'react-ga'
 
 import Search from '../Search'
 import Results from '../Results'
@@ -11,16 +12,24 @@ export default class Shell extends Component {
     super();
   }
 
+  componentWillMount() { // or componentDidMount
+    this.updateAnalytics()
+  }
+
   render() {
     return (
-      <BrowserRouter>
+      <Router history={this.props.history}>
         <div style={{height: '100%'}}>
           <Route exact path="/" component={Search}/>
           <Route exact path="/complete" component={Complete}/>
           <Route exact path="/results/:origin/:destination" component={Results}/>
         </div>
-      </BrowserRouter>
+      </Router>
     );
+  }
+
+  updateAnalytics() {
+    console.log("NEW ROUTE")
   }
 
 }

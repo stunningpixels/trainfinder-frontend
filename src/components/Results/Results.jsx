@@ -6,6 +6,7 @@ import JourneyService from '../../services/JourneyService'
 
 import swtImage from '../../media/swt_snow.jpg'
 import logo from '../../media/logo_white.png'
+import loader from '../../media/loader.svg'
 
 import './Results.css'
 
@@ -15,6 +16,7 @@ export default class Results extends Component {
     super()
     this.state = {
       results: [],
+      loadedResults: false,
       outboundSelection: null,
       inboundSelection: null,
     }
@@ -28,8 +30,9 @@ export default class Results extends Component {
     axios.get('https://secure-ridge-33847.herokuapp.com/scrape?originCode=' + origin + '&destinationCode=' + destination + '&lookAhead=60')
     //axios.get('http://localhost:5000/scrape?originCode=' + origin + '&destinationCode=' + destination + '&lookAhead=60')
       .then((response) => {
-        this.setState({results: response.data})
+        this.setState({results: response.data, loadedResults: true})
       })
+      .catch({loadedResults: true})
   }
 
   render(){
@@ -44,7 +47,8 @@ export default class Results extends Component {
               <img src={logo} style={{width: '100%', margin: '40px 0 0 0'}} />
               <div style={{marginBottom: '20px'}}>Showing results for <b>{this.defaultLocations[origin]}</b> to <b>{this.defaultLocations[destination]}</b></div>
               <div className="Results">
-                {this.state.results.length === 0 && <p>Loading results...</p>}
+                {!this.state.loadedResults && <img src={loader}/>}
+                {this.state.loadedResults && this.state.results.length === 0 && <p>No results found for this journey!</p>}
                 {this.state.results.map((result, index) => {
                   if(!result.inbound.cheapest && !result.inbound.cheapest) {
                     return null
