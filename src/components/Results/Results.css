@@ -89,7 +89,7 @@
 }
 
 .BookingDetails {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 50%;
   margin-left: -150px;

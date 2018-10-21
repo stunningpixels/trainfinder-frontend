@@ -22,7 +22,7 @@ export default class Search extends Component {
 
   render(){
     return (
-      <div style={{overflow: 'hidden', width: '100%', height: '100%', backgroundImage: "url(" + bgImage +")", backgroundSize: 'cover'}}>
+      <div style={{overflow: 'hidden', width: '100%', height: '100vh', backgroundImage: "url(" + bgImage +")", backgroundSize: 'cover'}}>
         <div style={{display: 'table', textAlign: 'center', overflow: 'hidden', width: '100%', height: '100%', background: "radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 100%)"}}>
           <div style={{display: 'table-cell', verticalAlign: 'middle', textAlign: 'center', width: '100%'}}>
             <div style={{width: '300px', height: '300px', paddingTop: '50px', display: 'inline-block'}}>

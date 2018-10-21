@@ -39,9 +39,8 @@ export default class Results extends Component {
     let noResult = false
     let noResultCount = 0;
     return (
-      <div style={{overflow: 'hidden', width: '100%', height: '100%', backgroundImage: "url(" + bgImage +")", backgroundSize: 'cover'}}>
-        <div style={{textAlign: 'center', overflow: 'hidden', width: '100%', height: '100%', background: "radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 100%)"}}>
-          <div style={{verticalAlign: 'middle', textAlign: 'center', width: '100%', height: '100%', overflow: 'scroll'}}>
+      <div>
+          <div style={{verticalAlign: 'middle', textAlign: 'center', width: '100%'}}>
             <div style={{width: '300px', display: 'inline-block'}}>
               <img src={logo} style={{width: '100%', margin: '40px 0 0 0'}} />
               <div style={{marginBottom: '20px'}}>Showing results for <b>{this.defaultLocations[origin]}</b> to <b>{this.defaultLocations[destination]}</b></div>
@@ -57,7 +56,6 @@ export default class Results extends Component {
               </div>
               <p>Copyright 2017 Knight-Webb Innovation Limited</p>
             </div>
-          </div>
         </div>
 
         <BookingDetails outboundSelection={this.state.outboundSelection} inboundSelection={this.state.inboundSelection} origin={origin} destination={destination} />
