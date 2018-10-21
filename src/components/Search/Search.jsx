@@ -4,7 +4,7 @@ import DropDownSearch from '../DropDownSearch'
 
 import JourneyService from '../../services/JourneyService'
 
-import swtImage from '../../media/swt_snow.jpg'
+import bgImage from '../../media/train.jpg'
 import logo from '../../media/logo_white.png'
 
 export default class Search extends Component {
@@ -22,14 +22,14 @@ export default class Search extends Component {
 
   render(){
     return (
-      <div style={{overflow: 'hidden', width: '100%', height: '100%', backgroundImage: "url(" + swtImage +")", backgroundSize: 'cover'}}>
+      <div style={{overflow: 'hidden', width: '100%', height: '100%', backgroundImage: "url(" + bgImage +")", backgroundSize: 'cover'}}>
         <div style={{display: 'table', textAlign: 'center', overflow: 'hidden', width: '100%', height: '100%', background: "radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 100%)"}}>
           <div style={{display: 'table-cell', verticalAlign: 'middle', textAlign: 'center', width: '100%'}}>
             <div style={{width: '300px', height: '300px', paddingTop: '50px', display: 'inline-block'}}>
               <img src={logo} style={{width: '100%'}} />
               <DropDownSearch onSelect={this.handleOriginSelect} style={{margin: '10px 0'}} placeholder="Origin" values={JourneyService.getDefaultLocations()}/>
               <DropDownSearch onSelect={this.handleDestinationSelect} style={{margin: '10px 0'}} placeholder="Destination" values={JourneyService.getDefaultLocations()} />
-              <p style={{margin: '10px 0'}}>Find cheap South West Trains tickets for as little as £1 each way, this site presents Megatrain fares in a readable format. Remember: There are no fares on Sundays or public holidays.</p>
+              <p style={{margin: '10px 0'}}>Find cheap East Midlands Trains tickets for as little as £1 each way, this site presents Megatrain fares in a readable format. There are no fares on Sundays or public holidays.</p>
               <p>Copyright 2017 Knight-Webb Innovation Limited</p>
             </div>
           </div>

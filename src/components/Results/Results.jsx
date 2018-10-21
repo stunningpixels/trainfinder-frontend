@@ -4,7 +4,7 @@ import moment from 'moment'
 
 import JourneyService from '../../services/JourneyService'
 
-import swtImage from '../../media/swt_snow.jpg'
+import bgImage from '../../media/train.jpg'
 import logo from '../../media/logo_white.png'
 import loader from '../../media/loader.svg'
 
@@ -27,12 +27,11 @@ export default class Results extends Component {
 
   componentWillMount() {
     let {origin, destination} = this.props.match.params;
-    axios.get('https://secure-ridge-33847.herokuapp.com/scrape?originCode=' + origin + '&destinationCode=' + destination + '&lookAhead=60')
-    //axios.get('http://localhost:5000/scrape?originCode=' + origin + '&destinationCode=' + destination + '&lookAhead=60')
+    axios.get('https://trainfinder.herokuapp.com/scrape?originCode=' + origin + '&destinationCode=' + destination + '&lookAhead=45')
       .then((response) => {
         this.setState({results: response.data, loadedResults: true})
       })
-      .catch({loadedResults: true})
+      .catch(() => this.setState({loadedResults: true}))
   }
 
   render(){
@@ -40,7 +39,7 @@ export default class Results extends Component {
     let noResult = false
     let noResultCount = 0;
     return (
-      <div style={{overflow: 'hidden', width: '100%', height: '100%', backgroundImage: "url(" + swtImage +")", backgroundSize: 'cover'}}>
+      <div style={{overflow: 'hidden', width: '100%', height: '100%', backgroundImage: "url(" + bgImage +")", backgroundSize: 'cover'}}>
         <div style={{textAlign: 'center', overflow: 'hidden', width: '100%', height: '100%', background: "radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%,rgba(0,0,0,1) 100%)"}}>
           <div style={{verticalAlign: 'middle', textAlign: 'center', width: '100%', height: '100%', overflow: 'scroll'}}>
             <div style={{width: '300px', display: 'inline-block'}}>
@@ -61,7 +60,7 @@ export default class Results extends Component {
           </div>
         </div>
 
-        <BookingDetails outboundSelection={this.state.outboundSelection} inboundSelection={this.state.inboundSelection} origin={origin} destination={destination} bookingComplete={() => this.props.history.push("/complete")} />
+        <BookingDetails outboundSelection={this.state.outboundSelection} inboundSelection={this.state.inboundSelection} origin={origin} destination={destination} />
 
       </div>
     )
@@ -82,11 +81,7 @@ const BookingDetails = ({outboundSelection, inboundSelection, origin, destinatio
     return null
   }
 
-  let url = "https://uk.megabus.com/JourneyResults.aspx?originCode=" + origin + "&destinationCode=" + destination + "&outboundDepartureDate=" + encodeURI(outboundSelection.date) + "&passengerCount=1&transportType=2&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0"
-
-  if(inboundSelection) {
-    url = url + "&withReturn=1&inboundDepartureDate=" + encodeURI(inboundSelection.date)
-  }
+  let url = "https://uk.megabus.com"
 
   return (
     <div className="BookingDetails">
